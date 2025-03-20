@@ -1,5 +1,7 @@
 package commandFabric;
 
+import commandFabric.Commands.Register;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,11 +13,12 @@ public class CommandHandler {
     //Конструктор чтоб инициализировать переменную commands
     public CommandHandler() {
         commands = new HashMap<String, CommandOrder>();
+        initialize();
     }
 
     //метод который будет ложить значения в commands
     public void initialize(){
-
+        commands.put("register", new Register());
     }
 
     //Метод который будет находить команду по его названию
